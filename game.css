@@ -1,0 +1,221 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #87CEEB;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 游戏容器 */
+.game-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 游戏头部 */
+.game-header {
+    background-color: #FFA500;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.game-title {
+    font-size: 2.5rem;
+    color: #FF69B4;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: bold;
+}
+
+.game-stats {
+    display: flex;
+    gap: 20px;
+    font-size: 1.2rem;
+}
+
+.game-stats div {
+    background-color: rgba(255,255,255,0.8);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.game-controls button {
+    background-color: #FF69B4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.game-controls button:hover {
+    background-color: #FF1493;
+}
+
+/* 游戏主体 */
+.game-main {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.game-field {
+    flex: 1;
+    min-width: 800px;
+    background-color: #90EE90;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#gameCanvas {
+    width: 100%;
+    height: auto;
+    display: block;
+    background-color: #90EE90;
+}
+
+.game-info {
+    width: 300px;
+    background-color: #FFE4B5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.instructions h3 {
+    color: #FF69B4;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.instructions p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* 游戏底部 */
+.game-footer {
+    background-color: #FFA500;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.game-message {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* 游戏结束和关卡完成界面 */
+.game-over, .level-complete {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 218, 185, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.game-over h2, .level-complete h2 {
+    color: #FF69B4;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.game-over p, .level-complete p {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.game-over button, .level-complete button {
+    background-color: #FF69B4;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.game-over button:hover, .level-complete button:hover {
+    background-color: #FF1493;
+}
+
+/* 隐藏类 */
+.hidden {
+    display: none;
+}
+
+/* 动画效果 */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .game-main {
+        flex-direction: column;
+    }
+    
+    .game-info {
+        width: 100%;
+    }
+    
+    .game-field {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .game-stats {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .game-title {
+        font-size: 2rem;
+    }
+}

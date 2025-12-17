@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小猪佩奇出门记</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="game-title">小猪佩奇出门记</div>
+            <div class="game-stats">
+                <div class="score">
+                    分数: <span id="score">0</span>
+                </div>
+                <div class="lives">
+                    生命: <span id="lives">3</span>
+                </div>
+                <div class="level">
+                    关卡: <span id="level">1</span>
+                </div>
+            </div>
+            <div class="game-controls">
+                <button id="startBtn">开始游戏</button>
+                <button id="pauseBtn">暂停游戏</button>
+                <button id="resetBtn">重置游戏</button>
+            </div>
+        </div>
+        
+        <div class="game-main">
+            <div class="game-field">
+                <canvas id="gameCanvas" width="800" height="600"></canvas>
+            </div>
+            <div class="game-info">
+                <div class="instructions">
+                    <h3>游戏说明</h3>
+                    <p>使用方向键控制小猪佩奇移动</p>
+                    <p>收集苹果 🍎 获得分数</p>
+                    <p>避开障碍物 🚧</p>
+                    <p>到达终点 🏠 进入下一关</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-footer">
+            <div class="game-message">
+                <span id="message">点击开始游戏</span>
+            </div>
+        </div>
+    </div>
+    
+    <div id="gameOver" class="game-over hidden">
+        <h2>游戏结束</h2>
+        <p>最终分数: <span id="finalScore">0</span></p>
+        <p>最终关卡: <span id="finalLevel">1</span></p>
+        <button id="restartBtn">重新开始</button>
+    </div>
+    
+    <div id="levelComplete" class="level-complete hidden">
+        <h2>关卡完成！</h2>
+        <p>分数: <span id="levelScore">0</span></p>
+        <button id="nextLevelBtn">下一关</button>
+        <button id="replayBtn">重玩本关</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
